@@ -1,0 +1,13 @@
+2025-12-04 22:57:42,295 - ERROR - Backtest Error Momentum-based: binance GET https://dapi.binance.com/dapi/v1/exchangeInfo
+2025-12-04 22:57:42,298 - ERROR - Backtest Error Trend-following: binance GET https://dapi.binance.com/dapi/v1/exchangeInfo
+2025-12-04 22:57:42,299 - ERROR - Backtest Error Breakout: binance GET https://dapi.binance.com/dapi/v1/exchangeInfo
+2025-12-04 22:57:42,299 - ERROR - Backtest Error Mean reversion / range trading: binance GET https://dapi.binance.com/dapi/v1/exchangeInfo
+2025-12-04 22:57:42,300 - ERROR - Backtest Error Reversal and pattern-based: binance GET https://dapi.binance.com/dapi/v1/exchangeInfo
+2025-12-04 22:57:42,301 - ERROR - Backtest Error Scalping-specific: binance GET https://dapi.binance.com/dapi/v1/exchangeInfo
+2025-12-04 22:58:00,296 - ERROR - Backtest Error2025-12-04 22:59:50,561 - INFO - Universe Updated: 15 tokens
+exchangeInfo
+2025-12-04 22:58:00,296 - ERROR - Backtest Error Trend-following: binance GET https://dapi.binance.com/dapi/v1/exchangeInfo
+2025-12-04 22:58:00,297 - ERROR - Backtest Error Breakout: binance GET https://dapi.binance.com/dapi/v1/exchangeInfo
+2025-12-04 22:58:00,297 - ERROR - Backtest Error Mean reversion / range trading: binance GET https://dapi.binance.com/dapi/v1/exchangeInfo
+2025-12-04 22:58:00,298 - ERROR - Backtest Error Reversal and pattern-based: binance GET https://dapi.binance.com/dapi/v1/exchangeInfo
+2025-12-04 22:58:00,298 - ERROR - Backtest Error Scalping-specific: binance GET https://dapi.binance.com/dapi/v1/exchangeInfo
