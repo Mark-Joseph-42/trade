@@ -10,6 +10,7 @@ import ccxt.async_support as ccxt
 from collections import deque
 from rich.console import Console
 from rich.table import Table
+from hardware_profiler import get_hardware_profile, NodeRole
 
 # --- Configuration Import ---
 try:
@@ -39,6 +40,7 @@ logger = logging.getLogger(__name__)
 console = Console()
 
 # --- Global State ---
+hardware_profile = None
 state = {} 
 monitor_tasks = {}
 sim_balance = SIM_STARTING_BALANCE
@@ -516,6 +518,15 @@ async def backtest_strategy(exchange, symbol, days, strategy_name):
 
 # --- Main ---
 async def main():
+    global hardware_profile
+    hardware_profile = get_hardware_profile()
+    update_status(
+        f"Hardware Profile: CS={hardware_profile.compute_score}, "
+        f"role={hardware_profile.role.value}, "
+        f"CPU cores={hardware_profile.num_cpu_cores}, "
+        f"GPU={hardware_profile.gpu_name or 'None'} "
+        f"VRAM={hardware_profile.total_vram_gb or 0}GB"
+    )
     update_status(f"Starting CCXT Engine ({EXCHANGE_ID})...")
     
     exchange_class = getattr(ccxt, EXCHANGE_ID)

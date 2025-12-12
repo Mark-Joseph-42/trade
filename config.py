@@ -1,10 +1,11 @@
 # config.py
 
-# --- Exchange Setup ---
-EXCHANGE_ID = 'binance'         # 'binance', 'kraken', 'kucoin', 'bybit', etc.
+# --- Data Source ---
+DATA_SOURCE = 'yfinance'  # 'yfinance' or 'ccxt'
 
-# SET THESE TO None TO USE PUBLIC DATA (NO ACCOUNT REQUIRED)
-API_KEY = None
+# --- Exchange Setup (Only used if DATA_SOURCE='ccxt') ---
+EXCHANGE_ID = 'binance'         # 'binance', 'kraken', 'kucoin', 'bybit', etc.
+API_KEY = None                  # Set to None for public data
 API_SECRET = None
 API_PASSWORD = "" 
 
@@ -17,7 +18,8 @@ FEE_RATE = 0.001
 
 # --- Screener & Universe ---
 UNIVERSE_SIZE = 15              
-TOKEN_WHITELIST = []            # e.g. ['BTC/USDT', 'ETH/USDT']
+# For yfinance, use format 'BTC-USD' or 'BTC-USDT'
+TOKEN_WHITELIST = ['AAPL', 'MSFT', 'GOOGL']  # Using stock symbols which are more reliable
 MIN_24H_VOLUME_USDT = 1000000   
 MIN_24H_CHANGE_PCT = 1.5        
 
@@ -30,7 +32,7 @@ VOLATILITY_LOOKBACK = 14
 ATR_MULTIPLIER_SL = 1.5         
 
 # --- Strategy: Timeframes ---
-KLINE_INTERVAL = "15m"          
+KLINE_INTERVAL = '1d'  # 1m, 5m, 15m, 30m, 1h, 1d, 1w, 1M (Note: 1m-30m data limited to last 60 days)
 KLINE_HISTORY_CANDLES = 200     # Number of candles to fetch
 ANALYSIS_INTERVAL_SECONDS = 60  
 MAX_TRADE_DURATION_CANDLES = 50 
